@@ -13,6 +13,7 @@ import {
   getOpacity,
   getSaturation,
 } from "../redux/options.slice";
+import Card from "./Card";
 import Option from "./Option";
 
 const Options = () => {
@@ -27,10 +28,10 @@ const Options = () => {
   const saturation = useSelector(getSaturation);
 
   return (
-    <div className="border-1 border-beige/20 rounded px-4 py-5 bg-navyBlue flex flex-col gap-2 md:flex-row md:gap-4 md:px-6 md:py-4">
+    <Card className="flex flex-col gap-2 md:flex-row md:gap-4">
       <Option title="Background Image URL:">
         <input
-          className="w-full"
+          className="w-full text-gray-600 px-2"
           type="text"
           id="bg-url"
           value={img}
@@ -89,7 +90,7 @@ const Options = () => {
           onChange={(evt) => dispatch(changeSaturation(evt.target.value))}
         />
       </Option>
-    </div>
+    </Card>
   );
 };
 
