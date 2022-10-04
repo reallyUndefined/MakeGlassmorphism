@@ -46,15 +46,17 @@ const Options = () => {
           >
             <div
               className="p-2 rounded"
-              style={{ backgroundColor: cardColor }}
+              style={{
+                backgroundColor: `rgb(${cardColor.r}, ${cardColor.g}, ${cardColor.b})`,
+              }}
             ></div>
           </div>
           {showClrPicker && (
-            <div className="absolute top-[120%] left-1/2 -translate-x-1/2">
+            <div className="absolute z-50 top-[120%] left-1/2 -translate-x-1/2">
               <SketchPicker
                 className="text-gray-700"
                 color={cardColor}
-                onChange={(clr) => dispatch(changeColor(clr.hex))}
+                onChange={(clr) => dispatch(changeColor(clr.rgb))}
               />
             </div>
           )}

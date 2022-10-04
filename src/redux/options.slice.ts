@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface optionsState {
   img: string;
-  color: string;
+  color: { r: number; g: number; b: number };
   blur: number;
   opacity: number;
   saturation: number;
@@ -12,9 +12,9 @@ const optionsSlice = createSlice({
   name: "options",
   initialState: {
     img: "https://images.unsplash.com/photo-1542827634-7aa7281fb965?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    color: "#4554ab",
-    blur: 12,
-    opacity: 50,
+    color: { r: 65, g: 118, b: 10 },
+    blur: 7,
+    opacity: 30,
     saturation: 125,
   },
   reducers: {
