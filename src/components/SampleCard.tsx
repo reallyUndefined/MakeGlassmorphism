@@ -14,7 +14,7 @@ const SampleCard = () => {
 
   return (
     <div
-      className="rounded-2xl px-4 py-10"
+      className="rounded-2xl px-4 py-10 shadow-lg border-1 border-gray-500"
       style={{
         backdropFilter: `blur(${blur}px) saturate(${saturation}%)`,
         WebkitBackdropFilter: `blur(${blur}px) saturate(${saturation}%)`,

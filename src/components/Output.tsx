@@ -6,6 +6,7 @@ import {
   getSaturation,
 } from "../redux/options.slice";
 import Card from "./Card";
+import ClickToCopy from "./ClickToCopy";
 
 const Output = () => {
   const blur = useSelector(getBlur);
@@ -13,9 +14,20 @@ const Output = () => {
   const saturation = useSelector(getSaturation);
   const opacity = useSelector(getOpacity);
 
+  const css = `
+    .glass {
+      background-color: rgb(${bgColor.r}, ${bgColor.g}, ${bgColor.b}, ${opacity}%);
+      backdrop-filter: blur(${blur}px) saturate(${saturation}%);
+      -webkit-backdrop-filter: blur(${blur}px) saturate(${saturation}%);
+    }
+  `;
+
   return (
     <Card className="md:py-5">
-      <div className="h-full p-4 bg-darkGray rounded whitespace-pre-wrap flex flex-col justify-center">
+      <div className="relative h-full px-4 py-10 bg-darkGray rounded whitespace-pre-wrap flex flex-col justify-center">
+        <div className="absolute right-4 top-4">
+          <ClickToCopy text={css} />
+        </div>
         <span className="text-gray-400">{"// css for glassmorphism"}</span>
         <p className="">
           <span className="text-yellow-500">.glass</span>
