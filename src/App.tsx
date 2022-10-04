@@ -7,7 +7,7 @@ function App() {
     <div className="min-h-screen bg-darkGray text-beige">
       <div className="container px-4 py-8 mx-auto">
         <Options />
-        <div className="grid gap-4 mt-4 md:grid-cols-2">
+        <div className="grid gap-4 mt-4 md:grid-cols-2 items-start">
           <Preview />
           <Output />
         </div>

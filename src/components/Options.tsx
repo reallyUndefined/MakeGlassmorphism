@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SketchPicker } from "react-color";
 import { useSelector, useDispatch } from "react-redux";
+import useClickOutsideToClose from "../hooks/useClickOutsideToClose";
 import {
   changeBlur,
   changeColor,
@@ -27,6 +28,8 @@ const Options = () => {
   const opacity = useSelector(getOpacity);
   const saturation = useSelector(getSaturation);
 
+  const node = useClickOutsideToClose(showClrPicker, setShowClrPicker);
+
   return (
     <Card className="flex flex-col gap-2 md:flex-row md:gap-4">
       <Option title="Background Image URL:">
@@ -52,7 +55,10 @@ const Options = () => {
             ></div>
           </div>
           {showClrPicker && (
-            <div className="absolute z-50 top-[120%] left-1/2 -translate-x-1/2">
+            <div
+              ref={node}
+              className="absolute z-50 top-[120%] left-1/2 -translate-x-1/2"
+            >
               <SketchPicker
                 className="text-gray-700"
                 color={cardColor}
