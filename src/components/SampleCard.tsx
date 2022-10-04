@@ -17,6 +17,7 @@ const SampleCard = () => {
       className="rounded-2xl px-4 py-10"
       style={{
         backdropFilter: `blur(${blur}px) saturate(${saturation}%)`,
+        WebkitBackdropFilter: `blur(${blur}px) saturate(${saturation}%)`,
         backgroundColor: `rgba(${bgColor.r}, ${bgColor.g}, ${bgColor.b}, ${opacity}%)`,
       }}
     >
