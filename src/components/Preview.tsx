@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import useIsItImg from "../hooks/useIsItImg";
 import { getImg } from "../redux/options.slice";
 import Card from "./Card";
 import SampleCard from "./SampleCard";
@@ -6,10 +7,12 @@ import SampleCard from "./SampleCard";
 const Preview = () => {
   const img = useSelector(getImg);
 
+  const validImg = useIsItImg(img);
+
   return (
     <Card className="md:py-6">
       <div className="relative z-0 h-full rounded-lg overflow-hidden bg-slate-500 min-h-[200px] p-8 lg:p-20">
-        {img.length > 0 && (
+        {validImg && (
           <img
             src={img}
             alt=""

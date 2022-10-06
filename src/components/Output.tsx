@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import useIsItImg from "../hooks/useIsItImg";
 import {
   getBlur,
   getColor,
@@ -16,21 +17,23 @@ const Output = () => {
   const saturation = useSelector(getSaturation);
   const opacity = useSelector(getOpacity);
 
+  const validImg = useIsItImg(img);
+
   const cssGlass = `
-    .glass {
-      background-color: rgb(${bgColor.r}, ${bgColor.g}, ${bgColor.b}, ${opacity}%);
-      backdrop-filter: blur(${blur}px) saturate(${saturation}%);
-      -webkit-backdrop-filter: blur(${blur}px) saturate(${saturation}%);
-    }
+.glass {
+  background-color: rgb(${bgColor.r}, ${bgColor.g}, ${bgColor.b}, ${opacity}%);
+  backdrop-filter: blur(${blur}px) saturate(${saturation}%);
+  -webkit-backdrop-filter: blur(${blur}px) saturate(${saturation}%);
+}
   `;
 
   const cssBg = `
-    .bg {
-      background-color: rgb(100, 116, 139);
-      ${img.length > 0 ? `background-image: url(${img});` : ""}
-      background-position: center;
-      background-size: cover;
-    }
+.bg {
+  background-color: rgb(100, 116, 139);
+  ${validImg ? `background-image: url(${img});` : ""}
+  background-position: center;
+  background-size: cover;
+}
   `;
 
   return (
@@ -71,7 +74,7 @@ const Output = () => {
             <span className="text-yellow-500">.bg</span>
             {" {"} <br />
             <CssProperty name="background-color:" value="rgb(100, 116, 139);" />
-            {img.length > 0 && (
+            {validImg && (
               <CssProperty name="background-image:" value={`url(${img});`} />
             )}
             <CssProperty name="background-position:" value="center;" />

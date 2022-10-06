@@ -8,7 +8,7 @@ const ClickToCopy = ({ text }: ClickToCopyProps) => {
     <button
       className="border-2 border-navyBlue rounded p-2 text-navyBlue hover:text-beige hover:bg-navyBlue hover:border-beige transition duration-200 ease-out"
       aria-label="copy"
-      onClick={() => navigator.clipboard.writeText(text)}
+      onClick={() => navigator.clipboard.writeText(text.trim())}
     >
       <MdOutlineContentCopy size={20} />
     </button>
