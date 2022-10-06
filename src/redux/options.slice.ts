@@ -11,10 +11,10 @@ interface optionsState {
 const optionsSlice = createSlice({
   name: "options",
   initialState: {
-    img: "https://images.unsplash.com/photo-1542827634-7aa7281fb965?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    color: { r: 65, g: 118, b: 10 },
-    blur: 7,
-    opacity: 30,
+    img: "https://images.unsplash.com/photo-1621568670868-24a7dfc590e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    color: { r: 255, g: 100, b: 0 },
+    blur: 5,
+    opacity: 45,
     saturation: 125,
   },
   reducers: {
