@@ -11,7 +11,7 @@ function App() {
           <img src={logo} alt="" className="mx-auto w-32 rounded-md lg:w-44" />
         </div>
         <Options />
-        <div className="grid gap-4 mt-4 md:grid-cols-2 items-start">
+        <div className="grid gap-4 mt-4 md:grid-cols-2">
           <Preview />
           <Output />
         </div>
