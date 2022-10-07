@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sourceCodePro: ["Source Code Pro", "monospace"],
+        notoSans: ["Noto Sans", "sans-serif"],
+      },
       borderWidth: {
         1: "1px",
       },

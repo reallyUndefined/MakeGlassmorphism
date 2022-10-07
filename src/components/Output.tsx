@@ -41,7 +41,7 @@ const Output = () => {
       <div className="rounded bg-darkGray px-4 py-2 text-xl">
         CSS for Glassmorphism
       </div>
-      <div className="px-4 py-5 bg-darkGray rounded whitespace-pre-wrap h-full flex flex-col gap-3 justify-center">
+      <div className="font-sourceCodePro px-4 py-5 bg-darkGray rounded whitespace-pre-wrap h-full flex flex-col gap-3 justify-center">
         <div className="relative w-full">
           <div className="absolute right-0 top-0">
             <ClickToCopy text={cssGlass} />

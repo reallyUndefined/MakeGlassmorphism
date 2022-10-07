@@ -5,7 +5,7 @@ import logo from "./images/logo.png";
 
 function App() {
   return (
-    <div className="min-h-screen bg-darkGray text-beige">
+    <div className="min-h-screen bg-darkGray text-beige font-notoSans">
       <div className="container px-4 py-8 mx-auto">
         <div className="mb-4">
           <img src={logo} alt="" className="mx-auto w-32 rounded-md lg:w-44" />

@@ -14,7 +14,7 @@ const SampleCard = () => {
 
   return (
     <div
-      className="rounded-2xl px-4 py-10 shadow-lg border-1 border-gray-500 max-w-xs mx-auto"
+      className="rounded-2xl px-4 py-10 shadow-lg border-1 border-gray-500 max-w-[21rem] mx-auto"
       style={{
         backdropFilter: `blur(${blur}px) saturate(${saturation}%)`,
         WebkitBackdropFilter: `blur(${blur}px) saturate(${saturation}%)`,
@@ -26,7 +26,7 @@ const SampleCard = () => {
         alt="pokemon"
         className="rounded w-3/4 mx-auto mb-6 md:w-1/2"
       />
-      <div className="relative bg-darkGray px-6 py-4 rounded text-lg lg:text-xl">
+      <div className="relative bg-darkGray px-6 py-4 rounded md:text-lg lg:text-xl">
         {/* decos */}
         <div className="absolute top-1 left-1 rounded-full w-2 h-2 bg-kindaRed"></div>
         <div className="absolute top-1 right-1 rounded-full w-2 h-2 bg-kindaRed"></div>
@@ -37,7 +37,7 @@ const SampleCard = () => {
         <div className="absolute top-1/2 left-0 -translate-y-1/2 h-10 w-[2px] bg-yellow-500"></div>
         <div className="absolute top-1/2 right-0 -translate-y-1/2 h-10 w-[2px] bg-yellow-500"></div>
         {/* content */}
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-[min-content_1fr] gap-x-4">
           <span className="font-medium">Name:</span>
           <span>Bulbasaur</span>
           <span className="font-medium">Type:</span>
